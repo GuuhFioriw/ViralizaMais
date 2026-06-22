@@ -1,586 +1,385 @@
-/* RESET */
-
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:'Poppins',sans-serif;
+/* ==========================================================================
+   RESET & CONFIGURAÇÕES GERAIS
+   ========================================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
 }
 
-html{
-    scroll-behavior:smooth;
+html {
+    scroll-behavior: smooth;
 }
 
-body{
-    background:#070707;
-    color:#fff;
-    overflow-x:hidden;
+body {
+    background: #050505; /* Preto profundo idêntico ao mockup */
+    color: #ffffff;
+    overflow-x: hidden;
 }
 
-/* CORES */
-
-:root{
-    --roxo:#8B5CF6;
-    --rosa:#EC4899;
-    --laranja:#F97316;
-    --preto:#070707;
-    --cinza:#141414;
+:root {
+    --roxo: #8B5CF6;
+    --rosa: #EC4899;
+    --laranja: #F97316;
+    --cinza: #141414;
 }
 
-/* HEADER */
-
-header{
-    position:fixed;
-    top:0;
-    left:0;
-    width:100%;
-    padding:20px 8%;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    backdrop-filter:blur(15px);
-    background:rgba(0,0,0,.5);
-    z-index:999;
-    border-bottom:1px solid rgba(255,255,255,.05);
+/* ==========================================================================
+   HEADER (NAVBAR)
+   ========================================================================== */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 25px 10%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    background: rgba(5, 5, 5, 0.75);
+    z-index: 999;
 }
 
-.logo{
+.logo {
     display: flex;
     align-items: center;
 }
 
-nav a{
-    color:#fff;
-    text-decoration:none;
-    margin-left:25px;
-    transition:.3s;
+nav a {
+    color: #94a3b8;
+    text-decoration: none;
+    margin-left: 32px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    transition: .3s ease;
 }
 
-nav a:hover{
-    color:var(--rosa);
+nav a:hover, nav a.active {
+    color: #ffffff;
 }
 
-nav a.active{
-    color:var(--rosa);
+/* ==========================================================================
+   SEÇÃO HERO
+   ========================================================================== */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10%;
+    gap: 80px;
+    background: #050505;
 }
 
-/* HERO */
-
-.hero{
-    min-height:100vh;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:0 8%;
-    gap:60px;
+.hero-text {
+    flex: 1.2;
+    max-width: 650px;
 }
 
-.hero-text{
-    max-width:700px;
+.hero-text h1 {
+    font-size: 4rem;
+    font-weight: 900;
+    line-height: 1.05;
+    margin-bottom: 0px;
+    letter-spacing: -1.5px;
+    color: #ffffff;
 }
 
-.hero-text h1{
-    font-size:4.5rem;
-    line-height:1.1;
-    margin-bottom:20px;
+.hero-text h1 span {
+    background: linear-gradient(90deg, var(--rosa), var(--laranja));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
-.hero-text h1 span{
-    background:linear-gradient(
-        90deg,
-        var(--roxo),
-        var(--rosa),
-        var(--laranja)
-    );
-
-    background-clip:text;
-    -webkit-background-clip:text;
-    -webkit-text-fill-color:transparent;
+/* Estilização perfeita do texto manuscrito "Merece resultados." */
+.hero-subtitle {
+    font-family: 'Caveat', cursive;
+    font-size: 3.2rem;
+    color: var(--laranja);
+    margin-top: -5px;
+    margin-bottom: 25px;
+    font-weight: 700;
+    transform: rotate(-1deg);
 }
 
-.hero-text p{
-    color:#bdbdbd;
-    font-size:1.2rem;
-    margin-bottom:30px;
+.hero-description {
+    color: #94a3b8;
+    font-size: 1.1rem;
+    margin-bottom: 40px;
+    max-width: 520px;
+    line-height: 1.6;
 }
 
-.hero-buttons{
-    display:flex;
-    gap:15px;
-    flex-wrap:wrap;
+/* BOTÕES HERO */
+.hero-buttons {
+    display: flex;
+    gap: 20px;
 }
 
-/* BOTÕES */
-
-.btn-primary{
-    text-decoration:none;
-    padding:15px 30px;
-    border-radius:50px;
-    color:white;
-    background:linear-gradient(
-        90deg,
-        var(--roxo),
-        var(--rosa)
-    );
-
-    font-weight:600;
-    transition:.3s;
+.btn-primary {
+    text-decoration: none;
+    padding: 16px 32px;
+    border-radius: 50px; /* Estilo pill moderno */
+    color: #ffffff;
+    background: linear-gradient(90deg, var(--rosa), var(--laranja));
+    font-weight: 700;
+    font-size: 0.85rem;
+    letter-spacing: 0.5px;
+    transition: all .3s ease;
+    box-shadow: 0 4px 15px rgba(236, 72, 153, 0.2);
 }
 
-.btn-primary:hover{
-    transform:translateY(-5px);
+.btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(236, 72, 153, 0.4);
 }
 
-.btn-secondary{
-    text-decoration:none;
-    padding:15px 30px;
-    border-radius:50px;
-    border:2px solid var(--roxo);
-    color:white;
-    transition:.3s;
+.btn-secondary {
+    text-decoration: none;
+    padding: 16px 32px;
+    border-radius: 50px;
+    border: 1.5px solid rgba(255, 255, 255, 0.2);
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 0.85rem;
+    letter-spacing: 0.5px;
+    background: transparent;
+    transition: all .3s ease;
 }
 
-.btn-secondary:hover{
-    background:var(--roxo);
+.btn-secondary:hover {
+    border-color: #ffffff;
+    background: rgba(255, 255, 255, 0.05);
+    transform: translateY(-3px);
 }
 
-/* CARD HERO */
-
-.hero-card{
-    display:flex;
-    justify-content:center;
-    align-items:center;
+/* ==========================================================================
+   ÍCONE MAIS NEON REALISTA (LADO DIREITO)
+   ========================================================================== */
+.hero-card {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.glow-card{
-
-    width:350px;
-    height:350px;
-
-    border-radius:30px;
-
-    background:linear-gradient(
-        135deg,
-        rgba(139,92,246,.15),
-        rgba(236,72,153,.15),
-        rgba(249,115,22,.15)
-    );
-
-    border:1px solid rgba(255,255,255,.08);
-
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
-
-    box-shadow:
-    0 0 30px rgba(139,92,246,.3),
-    0 0 60px rgba(236,72,153,.2);
-
-    animation:float 4s ease infinite;
+.neon-wrapper {
+    position: relative;
+    width: 380px;
+    height: 380px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.glow-card h3{
-    font-size:2rem;
+.neon-svg {
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    /* Camadas de drop-shadow para criar a luminescência do tubo de vidro de neon */
+    filter: drop-shadow(0 0 5px rgba(168, 85, 247, 0.5))
+            drop-shadow(0 0 15px rgba(236, 72, 153, 0.6)) 
+            drop-shadow(0 0 40px rgba(249, 115, 22, 0.4));
+    animation: neonPulse 3s ease-in-out infinite alternate;
 }
 
-/* Estilização da logo dentro do card flutuante */
-.glow-card .card-logo {
-    width: 140px;      /* Largura ideal para dar o destaque do print */
-    height: 140px;     /* Altura igual para manter o círculo perfeito */
-    margin-bottom: 30px; /* Espaço bacana entre a logo e o texto de serviços */
-    object-fit: contain; /* Garante que a imagem não distorça */
+/* Brilho de fundo difuso atmosférico */
+.neon-back-glow {
+    position: absolute;
+    width: 65%;
+    height: 65%;
+    background: radial-gradient(circle, rgba(236, 72, 153, 0.25) 0%, rgba(249, 115, 22, 0.05) 50%, transparent 100%);
+    filter: blur(40px);
+    z-index: 1;
+    pointer-events: none;
 }
 
-@keyframes float{
-
-    0%{
-        transform:translateY(0);
+@keyframes neonPulse {
+    0% {
+        filter: drop-shadow(0 0 4px rgba(168, 85, 247, 0.4))
+                drop-shadow(0 0 12px rgba(236, 72, 153, 0.5)) 
+                drop-shadow(0 0 30px rgba(249, 115, 22, 0.3));
     }
-
-    50%{
-        transform:translateY(-20px);
-    }
-
-    100%{
-        transform:translateY(0);
+    100% {
+        filter: drop-shadow(0 0 7px rgba(168, 85, 247, 0.6))
+                drop-shadow(0 0 20px rgba(236, 72, 153, 0.8)) 
+                drop-shadow(0 0 50px rgba(249, 115, 22, 0.5));
     }
 }
 
-/* SEÇÕES */
-
-section{
-    padding:100px 8%;
+/* ==========================================================================
+   OUTRAS SEÇÕES DO SITE
+   ========================================================================== */
+section {
+    padding: 120px 10%;
 }
 
-section h2{
-    text-align:center;
-    font-size:3rem;
-    margin-bottom:20px;
+section h2 {
+    text-align: center;
+    font-size: 2.8rem;
+    font-weight: 800;
+    margin-bottom: 20px;
+    letter-spacing: -0.5px;
 }
 
-section p{
-    text-align:center;
+#sobre p {
+    max-width: 800px;
+    margin: auto;
+    color: #94a3b8;
+    font-size: 1.1rem;
+    text-align: center;
+    line-height: 1.8;
 }
 
-#sobre p{
-    max-width:900px;
-    margin:auto;
-    color:#bdbdbd;
-    line-height:1.8;
+/* SITEMA DE CARDS DE SERVIÇOS */
+.services-grid {
+    margin-top: 60px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
 }
 
-/* SERVIÇOS */
-
-.services-grid{
-
-    margin-top:50px;
-
-    display:grid;
-    grid-template-columns:repeat(
-        auto-fit,
-        minmax(280px,1fr)
-    );
-
-    gap:25px;
+.card {
+    background: var(--cinza);
+    padding: 40px 30px;
+    border-radius: 24px;
+    text-align: center;
+    transition: all .3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.03);
 }
 
-.card{
-
-    background:var(--cinza);
-
-    padding:35px;
-
-    border-radius:20px;
-
-    text-align:center;
-
-    transition:.3s;
-
-    border:1px solid rgba(255,255,255,.05);
+.card:hover {
+    transform: translateY(-8px);
+    border-color: rgba(236, 72, 153, 0.3);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 }
 
-.card:hover{
-    transform:translateY(-10px);
-    border-color:var(--rosa);
+.card i {
+    font-size: 2.5rem;
+    margin-bottom: 25px;
+    background: linear-gradient(90deg, var(--roxo), var(--rosa), var(--laranja));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
-.card i{
-
-    font-size:2.5rem;
-
-    margin-bottom:20px;
-
-    background:linear-gradient(
-        90deg,
-        var(--roxo),
-        var(--rosa),
-        var(--laranja)
-    );
-
-    background-clip:text;
-    -webkit-background-clip:text;
-    -webkit-text-fill-color:transparent;
+.card h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
 }
-
 
 /* PORTFÓLIO */
-
 .portfolio-single {
-    max-width: 1100px; /* Define uma largura máxima excelente para telas grandes */
-    margin: 50px auto 0 auto; /* Centraliza o bloco na tela */
-    border-radius: 20px;
+    max-width: 1000px;
+    margin: 60px auto 0 auto;
+    border-radius: 24px;
     overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); /* Adiciona uma sombra estilosa */
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
 }
 
 .portfolio-single img {
     width: 100%;
-    height: auto; /* Mantém a proporção exata da imagem sem achatar ou cortar */
+    height: auto;
     display: block;
-    object-fit: contain;
 }
 
 /* CONTADORES */
-
-.numbers{
-
-    display:grid;
-
-    grid-template-columns:repeat(
-        auto-fit,
-        minmax(250px,1fr)
-    );
-
-    gap:20px;
+.numbers {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 30px;
 }
 
-.number-box{
-
-    background:var(--cinza);
-
-    padding:40px;
-
-    border-radius:20px;
-
-    text-align:center;
-}
-
-.number-box h3{
-
-    font-size:3rem;
-
-    background:linear-gradient(
-        90deg,
-        var(--roxo),
-        var(--rosa),
-        var(--laranja)
-    );
-
-    background-clip:text;
-    -webkit-background-clip:text;
-    -webkit-text-fill-color:transparent;
-}
-
-/* FORMULÁRIO */
-
-form{
-
-    max-width:700px;
-
-    margin:auto;
-
-    display:flex;
-    flex-direction:column;
-    gap:15px;
-}
-
-input,
-textarea{
-
-    padding:18px;
-
-    border:none;
-
-    border-radius:15px;
-
-    background:#151515;
-
-    color:white;
-}
-
-textarea{
-    height:180px;
-    resize:none;
-}
-
-button{
-
-    padding:18px;
-
-    border:none;
-
-    border-radius:15px;
-
-    background:linear-gradient(
-        90deg,
-        var(--roxo),
-        var(--rosa)
-    );
-
-    color:white;
-
-    font-weight:700;
-
-    cursor:pointer;
-}
-
-/* REDES SOCIAIS */
-
-.social{
-    margin-top: 50px;
+.number-box {
+    background: var(--cinza);
+    padding: 45px;
+    border-radius: 24px;
     text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+.number-box h3 {
+    font-size: 3.5rem;
+    font-weight: 800;
+    background: linear-gradient(90deg, var(--roxo), var(--rosa), var(--laranja));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.number-box p {
+    color: #94a3b8;
+    margin-top: 5px;
+}
+
+/* CONTATO & FOOTER */
+.social {
+    margin-top: 50px;
     display: flex;
     justify-content: center;
-    gap: 30px; /* Espaço entre o botão do Instagram e do E-mail */
+    gap: 20px;
     flex-wrap: wrap;
 }
 
-.social a{
-    font-size: 1.2rem;
-    color: white;
+.social a {
+    color: #ffffff;
     text-decoration: none;
-    padding: 15px 30px;
+    padding: 16px 35px;
     border-radius: 50px;
-    background: #141414; /* Cor de fundo escura para os botões */
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: var(--cinza);
+    border: 1px solid rgba(255, 255, 255, 0.05);
     display: flex;
     align-items: center;
-    gap: 10px; /* Espaço entre o ícone e o texto */
-    transition: .3s;
+    gap: 12px;
+    font-weight: 600;
+    transition: all .3s ease;
 }
 
-/* Efeito ao passar o mouse por cima dos botões */
-.social a:hover{
-    transform: translateY(-5px);
+.social a:hover {
+    transform: translateY(-4px);
     border-color: var(--rosa);
-    background: linear-gradient(90deg, var(--roxo), var(--rosa));
+    box-shadow: 0 10px 20px rgba(236, 72, 153, 0.15);
 }
 
-/* FOOTER */
-
-footer{
-
-    text-align:center;
-
-    padding:30px;
-
-    background:#050505;
-
-    color:#888;
-}
-
-/* RESPONSIVO */
-
-@media(max-width:900px){
-
-    .hero{
-
-        flex-direction:column;
-
-        text-align:center;
-
-        padding-top:150px;
-    }
-
-    .hero-text h1{
-        font-size:3rem;
-    }
-
-    nav{
-        display:none;
-    }
-
-    .glow-card{
-        width:280px;
-        height:280px;
-    }
-
+footer {
+    text-align: center;
+    padding: 40px;
+    background: #020202;
+    color: #64748b;
+    font-size: 0.9rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.02);
 }
 
 /* ==========================================================================
-   VERSÃO MOBILE COMPLETA E CORRIGIDA (CELULARES)
+   RESPONSIVIDADE (MOBILE & TABLET)
    ========================================================================== */
-@media (max-width: 768px) {
-    
-    /* 1. Ajuste do Menu Superior */
-    header {
-        position: relative; /* Muda de fixed para relative para não cobrir o texto */
-        padding: 15px 5%;
-        flex-direction: column;
-        gap: 15px;
-        background: #070707;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-    }
-
-    /* Alinha os links do menu lado a lado em uma linha horizontal e quebra se faltar espaço */
-    nav {
-        display: flex;
-        justify-content: center;
-        flex-wrap: wrap;
-        gap: 12px;
-    }
-
-    nav a {
-        margin: 0;
-        font-size: 0.9rem;
-    }
-
-    /* 2. Ajuste da Seção Inicial (Hero) */
+@media (max-width: 1024px) {
     .hero {
-        padding: 25px 5% 60px 5%;
-        flex-direction: column-reverse; /* Coloca o card no topo e o texto embaixo */
-        gap: 40px;
-        min-height: auto;
-        text-align: center;
-    }
-
-    /* 3. Ajuste do Texto Principal */
-    .hero-text {
-        width: 100%;
-        max-width: 100%;
-    }
-
-    .hero-text h1 {
-        font-size: 2.2rem;
-        line-height: 1.2;
-        margin-bottom: 15px;
-    }
-
-    .hero-text p {
-        font-size: 1rem;
-        margin-bottom: 30px;
-        padding: 0 10px;
-    }
-
-    /* 4. Alinhamento dos Botões */
-    .hero-buttons {
-        display: flex;
-        flex-direction: column; /* Empilha um botão sobre o outro */
-        align-items: center;
-        gap: 15px;
-        width: 100%;
-    }
-
-    .hero-buttons a {
-        width: 100%;
-        max-width: 300px; /* Largura padrão ideal para o clique no celular */
-        text-align: center;
-        justify-content: center;
-        margin: 0;
-    }
-
-    /* 5. Ajuste do Card Flutuante (Evita quebrar a tela) */
-    .hero-card {
-        width: 100%;
-        display: flex;
-        justify-content: center;
-    }
-
-    .glow-card {
-        width: 100%;
-        max-width: 320px; /* Prende o tamanho do card para caber em telas pequenas */
-        padding: 30px 20px;
-        box-sizing: border-box;
-    }
-
-    .glow-card .card-logo {
-        width: 120px;
-        height: 120px;
-        margin-bottom: 20px;
-    }
-
-    .glow-card p {
-        font-size: 0.95rem;
-        white-space: normal; /* Garante que o texto de serviços quebre linha se precisar */
-    }
-
-    /* 6. Ajuste do Portfólio Unificado */
-    .portfolio-single {
-        margin: 20px 5% 0 5%;
-        border-radius: 12px;
-    }
-
-    /* 7. Ajuste dos Botões de Contato */
-    .social {
         flex-direction: column;
-        align-items: center;
-        gap: 15px;
+        text-align: center;
+        padding-top: 160px;
+        gap: 50px;
     }
+    .hero-text h1 { font-size: 3.5rem; }
+    .hero-subtitle { text-align: center; }
+    .hero-description { margin: 0 auto 40px auto; }
+    .hero-buttons { justify-content: center; }
+    .neon-wrapper { width: 320px; height: 320px; }
+}
 
-    .social a {
-        width: 100%;
-        max-width: 280px;
-        justify-content: center;
+@media (max-width: 768px) {
+    header {
+        padding: 20px 5%;
     }
+    nav { display: none; } /* Menu hamburguer simplificado ou oculto para mobile */
+    .hero-text h1 { font-size: 2.8rem; }
+    .hero-subtitle { font-size: 2.5rem; }
+    .hero-buttons { flex-direction: column; width: 100%; max-width: 320px; margin: 0 auto; }
+    .btn-primary, .btn-secondary { text-align: center; width: 100%; }
+    section { padding: 80px 5%; }
 }
