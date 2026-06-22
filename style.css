@@ -476,7 +476,7 @@ footer{
     /* 1. Ajuste do Menu Superior */
     header {
         position: relative; /* Muda de fixed para relative para não cobrir o texto */
-        padding: 20px 5%;
+        padding: 15px 5%;
         flex-direction: column;
         gap: 15px;
         background: #070707;
@@ -498,7 +498,7 @@ footer{
 
     /* 2. Ajuste da Seção Inicial (Hero) */
     .hero {
-        padding: 30px 5% 60px 5%;
+        padding: 25px 5% 60px 5%;
         flex-direction: column-reverse; /* Coloca o card no topo e o texto embaixo */
         gap: 40px;
         min-height: auto;
