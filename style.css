@@ -469,56 +469,78 @@ footer{
 }
 
 /* ==========================================================================
-   MEDIA QUERY PARA VERSÃO DE TELEFONE (CELULAR)
+   VERSÃO MOBILE COMPLETA E CORRIGIDA (CELULARES)
    ========================================================================== */
 @media (max-width: 768px) {
-    /* Ajustes Gerais do Header (Menu) */
+    
+    /* 1. Ajuste do Menu Superior */
     header {
-        padding: 15px 5%;
-        flex-direction: column; /* Coloca a logo em cima e os links embaixo */
+        position: relative; /* Muda de fixed para relative para não cobrir o texto */
+        padding: 20px 5%;
+        flex-direction: column;
         gap: 15px;
-        text-align: center;
-        position: relative; /* Evita cobrir o conteúdo do topo */
+        background: #070707;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    /* Alinha os links do menu lado a lado em uma linha horizontal e quebra se faltar espaço */
+    nav {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 12px;
     }
 
     nav a {
-        margin: 0 10px; /* Reduz o espaçamento entre os links para não quebrar a linha */
-        font-size: 0.95rem;
+        margin: 0;
+        font-size: 0.9rem;
     }
 
-    /* Ajuste da Seção Inicial (Hero) */
+    /* 2. Ajuste da Seção Inicial (Hero) */
     .hero {
-        flex-direction: column-reverse; /* Coloca o card da logo em cima do texto no celular */
-        padding: 40px 5%;
-        text-align: center;
+        padding: 30px 5% 60px 5%;
+        flex-direction: column-reverse; /* Coloca o card no topo e o texto embaixo */
         gap: 40px;
-        margin-top: 0;
+        min-height: auto;
+        text-align: center;
+    }
+
+    /* 3. Ajuste do Texto Principal */
+    .hero-text {
+        width: 100%;
+        max-width: 100%;
     }
 
     .hero-text h1 {
-        font-size: 2.2rem; /* Diminui o título para não cortar na tela */
+        font-size: 2.2rem;
         line-height: 1.2;
+        margin-bottom: 15px;
     }
 
     .hero-text p {
         font-size: 1rem;
-        margin-bottom: 25px;
+        margin-bottom: 30px;
+        padding: 0 10px;
     }
 
-    /* Ajuste dos botões Principais */
+    /* 4. Alinhamento dos Botões */
     .hero-buttons {
-        flex-direction: column; /* Empilha os botões um em cima do outro */
-        gap: 15px;
+        display: flex;
+        flex-direction: column; /* Empilha um botão sobre o outro */
         align-items: center;
+        gap: 15px;
+        width: 100%;
     }
 
     .hero-buttons a {
-        width: 100%; /* Faz o botão ocupar a largura disponível */
-        max-width: 280px;
+        width: 100%;
+        max-width: 300px; /* Largura padrão ideal para o clique no celular */
         text-align: center;
+        justify-content: center;
+        margin: 0;
     }
 
-    /* Ajuste do Card Flutuante */
+    /* 5. Ajuste do Card Flutuante (Evita quebrar a tela) */
     .hero-card {
         width: 100%;
         display: flex;
@@ -527,32 +549,38 @@ footer{
 
     .glow-card {
         width: 100%;
-        max-width: 320px; /* Garante que o quadrado se adapte à tela pequena */
+        max-width: 320px; /* Prende o tamanho do card para caber em telas pequenas */
         padding: 30px 20px;
+        box-sizing: border-box;
     }
 
     .glow-card .card-logo {
-        width: 110px; /* Ajusta levemente o tamanho da logo no celular */
-        height: 110px;
+        width: 120px;
+        height: 120px;
         margin-bottom: 20px;
     }
 
-    /* Ajuste do Portfólio Unificado */
+    .glow-card p {
+        font-size: 0.95rem;
+        white-space: normal; /* Garante que o texto de serviços quebre linha se precisar */
+    }
+
+    /* 6. Ajuste do Portfólio Unificado */
     .portfolio-single {
-        margin: 30px 5% 0 5%;
+        margin: 20px 5% 0 5%;
         border-radius: 12px;
     }
 
-    /* Ajuste das Redes Sociais */
+    /* 7. Ajuste dos Botões de Contato */
     .social {
-        flex-direction: column; /* Empilha os botões de contato */
+        flex-direction: column;
         align-items: center;
         gap: 15px;
     }
 
     .social a {
         width: 100%;
-        max-width: 260px;
+        max-width: 280px;
         justify-content: center;
     }
 }
