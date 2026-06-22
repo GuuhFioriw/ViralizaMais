@@ -467,3 +467,92 @@ footer{
     }
 
 }
+
+/* ==========================================================================
+   MEDIA QUERY PARA VERSÃO DE TELEFONE (CELULAR)
+   ========================================================================== */
+@media (max-width: 768px) {
+    /* Ajustes Gerais do Header (Menu) */
+    header {
+        padding: 15px 5%;
+        flex-direction: column; /* Coloca a logo em cima e os links embaixo */
+        gap: 15px;
+        text-align: center;
+        position: relative; /* Evita cobrir o conteúdo do topo */
+    }
+
+    nav a {
+        margin: 0 10px; /* Reduz o espaçamento entre os links para não quebrar a linha */
+        font-size: 0.95rem;
+    }
+
+    /* Ajuste da Seção Inicial (Hero) */
+    .hero {
+        flex-direction: column-reverse; /* Coloca o card da logo em cima do texto no celular */
+        padding: 40px 5%;
+        text-align: center;
+        gap: 40px;
+        margin-top: 0;
+    }
+
+    .hero-text h1 {
+        font-size: 2.2rem; /* Diminui o título para não cortar na tela */
+        line-height: 1.2;
+    }
+
+    .hero-text p {
+        font-size: 1rem;
+        margin-bottom: 25px;
+    }
+
+    /* Ajuste dos botões Principais */
+    .hero-buttons {
+        flex-direction: column; /* Empilha os botões um em cima do outro */
+        gap: 15px;
+        align-items: center;
+    }
+
+    .hero-buttons a {
+        width: 100%; /* Faz o botão ocupar a largura disponível */
+        max-width: 280px;
+        text-align: center;
+    }
+
+    /* Ajuste do Card Flutuante */
+    .hero-card {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .glow-card {
+        width: 100%;
+        max-width: 320px; /* Garante que o quadrado se adapte à tela pequena */
+        padding: 30px 20px;
+    }
+
+    .glow-card .card-logo {
+        width: 110px; /* Ajusta levemente o tamanho da logo no celular */
+        height: 110px;
+        margin-bottom: 20px;
+    }
+
+    /* Ajuste do Portfólio Unificado */
+    .portfolio-single {
+        margin: 30px 5% 0 5%;
+        border-radius: 12px;
+    }
+
+    /* Ajuste das Redes Sociais */
+    .social {
+        flex-direction: column; /* Empilha os botões de contato */
+        align-items: center;
+        gap: 15px;
+    }
+
+    .social a {
+        width: 100%;
+        max-width: 260px;
+        justify-content: center;
+    }
+}
